@@ -3,7 +3,7 @@
 
 **Problem Statement:** <br/> In the era of social media dominance, users crave platforms that offer seamless posting experiences while also providing insights into trending topics. To address this need, we aim to develop a Streamlit application that allows users to compose and publish posts, same as popular social media platforms. This application will integrate with AWS Lambda and DynamoDB to facilitate post processing and hashtag analysis.<br/>
 
-**Technologies Used:** <br/> Python, SQL, AWS Lambda, Dynamodb, Streamlit.<br/>
+**Technologies Used:** <br/> Python, AWS Lambda, Dynamodb, Streamlit.<br/>
 
 **Project Workflow:** <br/>The project involves developing a Streamlit application that allows users to create and publish posts with hashtags, integrates AWS Lambda for processing and storing data in DynamoDB, and includes real-time analysis of trending hashtags. The application should update the trending hashtags dynamically as new posts are submitted. 
 
