@@ -5,7 +5,7 @@
 
 **Technologies Used:** <br/> Python, AWS Lambda, Dynamodb, Streamlit.<br/>
 
-**Project Workflow:** <br/>The project involves developing a Streamlit application that allows users to create and publish posts with hashtags, integrates AWS Lambda for processing and storing data in DynamoDB, and includes real-time analysis of trending hashtags. The application should update the trending hashtags dynamically as new posts are submitted. 
+**Project Workflow:** <br/>The project involves developing a Streamlit application that allows users to create and publish posts with hashtags, integrates AWS Lambda for processing and storing data in DynamoDB, and includes real-time analysis of trending hashtags. The application should update the trending hashtags dynamically as and when the new posts are submitted. 
 
 **Task performed to complete the project:** <br/> **1. Set up the Streamlit Application** - Install required python libraries and configure AWS for the project.
 Create the user interface to allow users to compose posts with text and hashtags.<br/>
