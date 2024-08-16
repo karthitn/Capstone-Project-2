@@ -17,4 +17,4 @@ Ensure the table structure supports efficient querying of trending hashtags. <br
 **5. Trending Hashtags Analysis** - Develop logic to analyze the DynamoDB table to identify trending hashtags.
 Implement real-time updates of trending hashtags in the Streamlit app as new posts are submitted. <br/>
 
-**hastag.py** - This file has code for storing post details in the DynamoDB and Display trending hashtags in streamlit.
+**hastag.py** - This file contains code that stores post details, integrates AWS Lambda for data processing and storage in DynamoDB, and uses Streamlit to display trending hashtags.
