@@ -28,14 +28,19 @@ Implement real-time updates of trending hashtags in the Streamlit app as and whe
 """)   
 
 # Streamlit app
-st.title(":blue[Post Composer]")
+# Extract hashtags from the text content
+def extract_hashtags(post_text):
+    return re.findall(r'#\w+', post_text)
 
-post_text = st.text_area(":violet[Write your post here]")
-hashtags = st.text_input(":violet[Enter hashtags separated by commas]")
+st.title(":blue[Compose and Publish Post]")
+
+# Single text area for both text content and hashtags
+post_text = st.text_area(":violet[Compose your post]",placeholder="Write your post and include #hashtags")
 
 if st.button("Publish"):
-    if post_text and hashtags:
+    if post_text:
         post_id = str(uuid.uuid4())
+        hashtags = extract_hashtags(post_text)
         response = aws_lambda.invoke(
             FunctionName='hastag',
             InvocationType='RequestResponse',
@@ -47,7 +52,7 @@ if st.button("Publish"):
         )
         st.success("Post published successfully!")
     else:
-        st.error("Please enter both text and hashtags")
+        st.error("Please enter text with hashtags")
 
 # Display trending hashtags
 st.title(":blue[Trending Hashtags]")
@@ -56,8 +61,8 @@ items = response['Items']
 
 hashtags_count = {}
 for item in items:
-    hashtags_list = item['Hashtags']['S'].split(',')
-    for hashtag in hashtags_list:
+    hashtags_list = item['Hashtags']['S']
+    for hashtag in json.loads(hashtags_list):
         if hashtag not in hashtags_count:
             hashtags_count[hashtag] = 1
         else:
